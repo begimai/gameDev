@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class GameController : MonoBehaviour {
 
@@ -30,9 +31,8 @@ public class GameController : MonoBehaviour {
                         }
 
                         Destroy (ball);
-                        Instantiate (ballTemplate);
+						Instantiate (ballTemplate) ;
                 }
         }
-
 }
 

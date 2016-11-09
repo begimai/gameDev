@@ -16,7 +16,7 @@ public class ballBehavior : MonoBehaviour {
 		Vector3 force = 
 			Quaternion.Euler(0, IntitialAngle, 0)*
 			Vector3.forward;
-		force = force * InputForceScale ;
+		force = force * InputForceScale;
 
 		rigidBody.AddForce (force);
 	}
@@ -30,4 +30,15 @@ public class ballBehavior : MonoBehaviour {
 			audioSource.PlayOneShot (audioForWall);
 		}
 	}
+	public void RestartGame () {
+		rigidBody.GetComponent<Rigidbody> ();
+		Vector3 force = 
+			Quaternion.Euler(0, IntitialAngle, 0)*
+			Vector3.forward;
+		force = force * InputForceScale;
+
+		rigidBody.AddForce (force);
+	}
+
 }
+
