@@ -2,22 +2,32 @@
 using System.Collections;
 
 public class ballBehavior : MonoBehaviour {
-	public float ForceScale = 10.0f;
-	public Rigidbody rb;
+
+
+	public float InputForceScale = 10.0f;
+	public float IntitialAngle = 45.0f;
+	public AudioSource audioSource;
+	public AudioClip audioForWall;
+	public AudioClip audioForPedal;
+	public Rigidbody rigidBody;
 	// Use this for initialization
 	void Start () {
-		rb.GetComponent<Rigidbody> ();
+		rigidBody.GetComponent<Rigidbody> ();
+		Vector3 force = 
+			Quaternion.Euler(0, IntitialAngle, 0)*
+			Vector3.forward;
+		force = force * InputForceScale ;
 
+		rigidBody.AddForce (force);
 	}
 	
-	// Update is called once per frame
-	void FixedUpdate () {
-		float horizontal = Input.GetAxis ("Horizontal");
-		float vertical = Input.GetAxis ("Vertical");
-
-		Vector3 force = new Vector3 (vertical, 0.0f, -horizontal);
-		force = force * ForceScale;
-
-		rb.AddForce (force);	
+	void OnCollisionEnter(Collision collision)
+	{
+		GameObject gameObject = collision.gameObject;
+		if (gameObject.CompareTag ("pedal")) {
+			audioSource.PlayOneShot (audioForPedal);
+		} else if (gameObject.CompareTag ("wall")) {
+			audioSource.PlayOneShot (audioForWall);
+		}
 	}
 }
