@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ballBehavior : MonoBehaviour {
+public class BallBehavior : MonoBehaviour {
 
 
 	public float InputForceScale = 10.0f;
@@ -10,14 +10,11 @@ public class ballBehavior : MonoBehaviour {
 	public AudioClip audioForWall;
 	public AudioClip audioForPedal;
 	public Rigidbody rigidBody;
-	// Use this for initialization
+
 	void Start () {
 		rigidBody.GetComponent<Rigidbody> ();
-		Vector3 force = 
-			Quaternion.Euler(0, IntitialAngle, 0)*
-			Vector3.forward;
+		Vector3 force = Quaternion.Euler(0, IntitialAngle, 0) * Vector3.forward;
 		force = force * InputForceScale;
-
 		rigidBody.AddForce (force);
 	}
 	
@@ -30,15 +27,4 @@ public class ballBehavior : MonoBehaviour {
 			audioSource.PlayOneShot (audioForWall);
 		}
 	}
-	public void RestartGame () {
-		rigidBody.GetComponent<Rigidbody> ();
-		Vector3 force = 
-			Quaternion.Euler(0, IntitialAngle, 0)*
-			Vector3.forward;
-		force = force * InputForceScale;
-
-		rigidBody.AddForce (force);
-	}
-
 }
-

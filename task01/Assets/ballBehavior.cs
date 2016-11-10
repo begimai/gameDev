@@ -1,16 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ballBehavior : MonoBehaviour {
+public class BallBehavior : MonoBehaviour {
 	public float ForceScale = 10.0f;
 	public Rigidbody rb;
-	// Use this for initialization
+
 	void Start () {
 		rb.GetComponent<Rigidbody> ();
-
 	}
 	
-	// Update is called once per frame
 	void FixedUpdate () {
 		float horizontal = Input.GetAxis ("Horizontal");
 		float vertical = Input.GetAxis ("Vertical");
