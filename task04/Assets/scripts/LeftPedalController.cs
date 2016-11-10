@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PedalController : MonoBehaviour {
+public class LeftPedalController : MonoBehaviour {
 
 	public float InputForceScale = 10.0f;
 	public float ForceAppliedToBallScale = 10.0f;
@@ -13,8 +13,10 @@ public class PedalController : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		float verticalAxis = Input.GetAxis ("Vertical");
-		Vector3 force = new Vector3 (verticalAxis, 0, 0); 
+
+		GameObject ball = GameObject.Find("Ball");
+		float ballPos = ball.transform.position.x;
+		Vector3 force = new Vector3 (ballPos, 0, 0); 
 		force = force * InputForceScale;
 		rigidBody.AddForce (force);
 	}
