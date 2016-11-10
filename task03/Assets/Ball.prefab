@@ -233,7 +233,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputForceScale: 50
-  IntitialAngle: 45
   audioSource: {fileID: 82000012626160026}
   audioForWall: {fileID: 8300000, guid: 2591a7db967a7b84aa5543bb81f4fa40, type: 3}
   audioForPedal: {fileID: 8300000, guid: 8c34f9626ff72d04da5bc6109a7246fd, type: 3}
