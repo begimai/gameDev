@@ -4,7 +4,7 @@ using System.Collections;
 
 public class GameController : MonoBehaviour {
 
-        public GameObject ballTemplate;
+        public GameObject ballTemp;
 
         public Text firstPlayerScore;
         public Text secondPlayerScore;
@@ -19,19 +19,25 @@ public class GameController : MonoBehaviour {
                 if (gameObject.CompareTag ("ball")) {
                         GameObject ball =
                                 gameObject;
-
-                        if (ball.transform.position.z < transform.position.z) {
+			Status sb = GetComponent<Status>();
+						if (ball.transform.position.z < transform.position.z) {
                                 ++firstPlayerScoreCounter;
                                 firstPlayerScore.text =
                                         firstPlayerScoreCounter.ToString();
+								Destroy (ball);
+				sb.IntitialAngle = Random.Range(-75.0f, 75.0f) + 180;
+								Instantiate (ballTemp);
+
                         } else {
                                 ++secondPlayerScoreCounter;
                                 secondPlayerScore.text =
                                         secondPlayerScoreCounter.ToString();
-                        }
+								Destroy (ball);
 
-                        Destroy (ball);
-						Instantiate (ballTemplate) ;
+
+								Instantiate (ballTemp);
+
+                        }
                 }
         }
 }
