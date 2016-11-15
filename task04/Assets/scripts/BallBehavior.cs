@@ -9,14 +9,15 @@ public class BallBehavior : MonoBehaviour {
 	public AudioClip audioForWall;
 	public AudioClip audioForPedal;
 	public Rigidbody rigidBody;
-	// Use this for initialization
+	private float waitTime = 2.0f;
+
 	void Start () {
 		rigidBody.GetComponent<Rigidbody> ();
-		Vector3 force = Quaternion.Euler(0, IntitialAngle, 0) * Vector3.forward;
+		Vector3 force = Quaternion.Euler (0, IntitialAngle, 0) * Vector3.forward;
 		force = force * InputForceScale;
 		rigidBody.AddForce (force);
 	}
-	
+		
 	void OnCollisionEnter(Collision collision)
 	{
 		GameObject gameObject = collision.gameObject;

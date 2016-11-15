@@ -3,6 +3,8 @@ using System.Collections;
 
 public class LeftPedalController : MonoBehaviour {
 
+	private GameObject pedal;
+	private GameObject ball;
 	public float InputForceScale = 10.0f;
 	public float ForceAppliedToBallScale = 10.0f;
 
@@ -13,10 +15,9 @@ public class LeftPedalController : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-
-		GameObject ball = GameObject.Find("Ball");
-		float ballPos = ball.transform.position.x;
-		Vector3 force = new Vector3 (ballPos, 0, 0); 
+		ball = GameObject.FindGameObjectWithTag ("ball");
+		float verticalAxis = ball.transform.position.x ;
+		Vector3 force = new Vector3 (verticalAxis, 0, 0); 
 		force = force * InputForceScale;
 		rigidBody.AddForce (force);
 	}

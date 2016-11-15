@@ -82,9 +82,11 @@
 -define:UNITY_EDITOR_64
 -define:UNITY_EDITOR_WIN
 -define:UNITY_TEAM_LICENSE
-Assets/GameController.cs
-Assets/ball2.cs
-Assets/ballBehavior.cs
-Assets/pedalController.cs
+Assets/scripts/BallBehavior.cs
+Assets/scripts/ChangeScene.cs
+Assets/scripts/GameController.cs
+Assets/scripts/LeftPedalController.cs
+Assets/scripts/RightPedalController.cs
+Assets/scripts/Timer.cs
 -r:D:\unity\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll
 -r:D:\unity\Editor\Data\Mono\lib\mono\unity\System.Xml.Linq.dll
