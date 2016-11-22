@@ -22,8 +22,10 @@ public class PedalController : MonoBehaviour {
 		GameObject gameObject = collision.gameObject;
 		if(gameObject.CompareTag("ball")){
 			GameObject ball = gameObject;
-			float shift = ball.transform.position.z - transform.position.z;
+			float shift = ball.transform.position.z - transform.position.z - 0.2f;
 			Vector3 force = new Vector3 (0, 0, shift);
+			Debug.Log (force);
+
 			force *= ForceAppliedToBallScale;
 			ball.GetComponent<Rigidbody>().AddForce (force);
 		}

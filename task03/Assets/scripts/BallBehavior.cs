@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BallBehavior : MonoBehaviour {
 
-	public float IntitialAngle = Random.Range(-75.0f, 75.0f);
+	public float IntitialAngle = Random.Range(-60.0f, 60.0f);
 	public float InputForceScale =  50.0f;
 	public AudioSource audioSource;
 	public AudioClip audioForWall;
@@ -25,6 +25,5 @@ public class BallBehavior : MonoBehaviour {
 		} else if (gameObject.CompareTag ("wall")) {
 			audioSource.PlayOneShot (audioForWall);
 		}
-	} 
+	}
 }
-
