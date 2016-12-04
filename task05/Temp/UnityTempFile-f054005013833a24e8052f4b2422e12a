@@ -83,7 +83,8 @@
 -define:UNITY_EDITOR_WIN
 -define:UNITY_TEAM_LICENSE
 Assets/BallController.cs
-Assets/Flipper.cs
 Assets/FlipperController.cs
+Assets/StartFigureController.cs
+Assets/trash/Flipper.cs
 -r:D:\Unity\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll
 -r:D:\Unity\Editor\Data\Mono\lib\mono\unity\System.Xml.Linq.dll
